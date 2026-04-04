@@ -11,14 +11,15 @@ To identify book folders, check `_data/works/` — each subfolder corresponds to
 
 ## Frontmatter
 
-Every content file must have YAML frontmatter with at least `title` and `style`:
+Every content file must have YAML frontmatter with at least `title`.
 
 ```yaml
 ---
 title: "Chapter Title"
-style: default-page
 ---
 ```
+
+Every content file has a `style`. If one isn't defined in the YAML frontmatter, it defaults to `default-page`.
 
 Common `style` values (space-separated CSS classes applied to `<body>`):
 - `cover-page` — book cover
@@ -33,7 +34,7 @@ Optional frontmatter keys:
 - `notes: footnotes` — override default endnote behaviour for this page
 - `layout` — override the default layout (rarely needed)
 
-> Check existing files in the project for any project-specific `style` values or frontmatter keys.
+Check existing files in the project for any project-specific `style` values or frontmatter keys.
 
 ## File naming
 

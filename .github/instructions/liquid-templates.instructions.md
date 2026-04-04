@@ -15,9 +15,9 @@ Common pattern — PDF and EPUB vs web/app:
 
 ```liquid
 {% if site.output == 'epub' or site.output == 'print-pdf' or site.output == 'screen-pdf' %}
-  {# Minimal markup for print/ebook #}
+  {# Markup for print and EPUB #}
 {% else %}
-  {# Full interactive markup for web/app #}
+  {# Markup for web/app #}
 {% endif %}
 ```
 
@@ -64,7 +64,7 @@ From `_data/settings.yml` (accessed via `site.data.settings`):
 - `site.data.settings.web.svg.inject`
 - See `_data/settings.yml` for the full list
 
-> Available settings vary by EBT version. Check `_data/settings.yml` in the project.
+Available settings vary by EBT version. Check `_data/settings.yml` in the project.
 
 ## Do not
 

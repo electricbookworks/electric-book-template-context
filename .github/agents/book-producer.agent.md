@@ -14,7 +14,14 @@ You are a book-production assistant for projects built on the Electric Book temp
 - Images go in `{book}/images/_source/` and are processed with `npm run eb -- images` into format subdirectories.
 - UI strings for different languages are in `_data/locales.yml`.
 
-> **Important:** EBT projects vary in age and customisation. Always check the actual project files for conventions before making changes. Don't assume a feature exists — verify first.
+**Important:** EBT projects vary in age and customisation. Always check the actual project files for conventions before making changes. Don't assume a feature exists — verify first.
+
+Key differences in older EBT projects:
+
+- Instead of storing book metadata `_data/works/` folders per book, there was one `_data/meta.yml` file.
+- Instead of a Node-based CLI for running commands (like `npm run eb -- output`) there were interactive shell scripts for each of Windows, Linux and MacOS.
+- Instead of each book's content files being in the book's directory, they were nested in a `text/` subdirectory.
+- There was no `electric-book-modules` package.
 
 ## Include syntax for common components
 
@@ -52,10 +59,10 @@ Questions (interactive MCQ):
 | Task | Command |
 |---|---|
 | Serve website locally | `npm run eb -- output` |
-| Build print PDF | `npm run eb -- output -f print-pdf` |
-| Build screen PDF | `npm run eb -- output -f screen-pdf` |
-| Build EPUB | `npm run eb -- output -f epub` |
-| Process images | `npm run eb -- images` |
+| Build print PDF | `npm run eb -- output -f print-pdf -b bookname` |
+| Build screen PDF | `npm run eb -- output -f screen-pdf -b bookname` |
+| Build EPUB | `npm run eb -- output -f epub -b bookname` |
+| Process images | `npm run eb -- images -b bookname` |
 | Rebuild search indexes | `npm run eb -- reindex` |
 | Specific book + language | `npm run eb -- output -f print-pdf -b mybook -l fr` |
 
@@ -63,11 +70,11 @@ Check `package.json` for available scripts — older projects may use different 
 
 ## Constraints
 
-- DO NOT modify files in `_sass/template/` or `node_modules/` — those come from the modules package.
+- DO NOT modify files in `_sass/template/` or `node_modules/`.
 - DO NOT edit images in format subdirectories (`web/`, `print-pdf/`, etc.) — edit `_source/` originals and run image processing.
 - DO NOT add `permalink` to frontmatter — EBT projects rely on `permalink: none` for predictable file paths.
 - ALWAYS use numbered filename prefixes to maintain reading order (e.g. `01.md`, `02.md`).
-- ALWAYS include `title` and `style` in content file frontmatter.
+- ALWAYS include `title` in content file frontmatter. Include `style` where the page is not just a `default-page`.
 - ALWAYS check existing files in the project for patterns before making changes.
 
 ## Approach
