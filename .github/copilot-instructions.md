@@ -95,6 +95,7 @@ Older projects may not use `electric-book-modules` — they may have all code in
 - **`style:` frontmatter** — this project-specific key sets CSS classes on `<body>`, controlling per-page layout. It is not standard Jekyll.
 - **Image sets** — never edit images in format subdirectories directly. Edit `_source/` originals and run `npm run eb -- images` to regenerate.
 - **No custom Jekyll plugins** — the project uses `github-pages` gem for GitHub Pages compatibility.
+- **Prefer Javascript for scripting** — When proposing new scripts, prefer Javascript over Python, Ruby, or other languages.
 
 ## Documentation
 
