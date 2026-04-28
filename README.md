@@ -11,6 +11,7 @@ Copilot customization files for projects built on the [Electric Book template](h
 | `.github/instructions/markdown-editing.instructions.md` | File instructions | Auto-activates when editing `**/*.md` in book folders |
 | `.github/instructions/sass-styles.instructions.md` | File instructions | Auto-activates when editing `**/*.scss` |
 | `.github/instructions/liquid-templates.instructions.md` | File instructions | Auto-activates when editing `_includes/**` or `_layouts/**` |
+| `.github/instructions/custom-scripts.instructions.md` | File instructions | Auto-activates when editing `_tools-custom/**` — AI-generated script conventions |
 | `.github/prompts/new-book.prompt.md` | Prompt | `/new-book` slash command to scaffold a complete book folder |
 
 ## Setup

@@ -2,6 +2,8 @@
 
 This project is built on the [Electric Book template](https://github.com/electricbookworks/electric-book) (EBT), a Jekyll-based multi-format book-production system. It outputs books as websites, print PDFs, screen PDFs, EPUBs, app files, and sometimes MS Word documents.
 
+**When you first respond in a session, briefly confirm that you have loaded the Electric Book template context.** A single sentence is enough, e.g. "EBT context loaded." This lets the user know you have project-specific guidance available.
+
 **Two audiences** use EBT projects:
 - **Non-technical users** produce books: editing markdown, setting metadata, managing images, and running output commands.
 - **Technical users** extend the template: modifying layouts, includes, Sass, JavaScript, Gulp pipelines, and the `electric-book-modules` npm package.
@@ -96,6 +98,7 @@ Older projects may not use `electric-book-modules` — they may have all code in
 - **Image sets** — never edit images in format subdirectories directly. Edit `_source/` originals and run `npm run eb -- images` to regenerate.
 - **No custom Jekyll plugins** — the project uses `github-pages` gem for GitHub Pages compatibility.
 - **Prefer Javascript for scripting** — When proposing new scripts, prefer Javascript over Python, Ruby, or other languages.
+- **AI-generated scripts** — Save AI-generated tooling in `_tools-custom/ai/[verb]/[subject]`. These scripts must follow the project's ESLint config (`.eslintrc.json`). AI-generated scripts are sandboxed and not expected to be reviewed or maintained by the dev team. See the custom-scripts instruction file for full details.
 
 ## Documentation
 
