@@ -12,12 +12,12 @@ Non-technical team members use AI to create scripts that help with book-producti
 Save all AI-generated scripts in:
 
 ```
-_tools-custom/ai/[verb]/[subject]/
+_tools-custom/ai/[subject]/[verb]/
 ```
 
-Examples: `_tools-custom/ai/check/broken-links/`, `_tools-custom/ai/convert/docx-to-md/`.
+Examples: `_tools-custom/ai/broken-links/check/`, `_tools-custom/ai/docx/convert-to-md/`.
 
-The `[verb]/[subject]` pattern keeps the `ai/` directory organised as more scripts are added.
+The `[subject]/[verb]` pattern keeps the `ai/` directory organised as more scripts are added.
 
 ## Code style
 
