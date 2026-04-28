@@ -98,7 +98,7 @@ Older projects may not use `electric-book-modules` — they may have all code in
 - **Image sets** — never edit images in format subdirectories directly. Edit `_source/` originals and run `npm run eb -- images` to regenerate.
 - **No custom Jekyll plugins** — the project uses `github-pages` gem for GitHub Pages compatibility.
 - **Prefer Javascript for scripting** — When proposing new scripts, prefer Javascript over Python, Ruby, or other languages.
-- **AI-generated scripts** — Save AI-generated tooling in `_tools-custom/ai/[verb]/[subject]`. These scripts must follow the project's ESLint config (`.eslintrc.json`). AI-generated scripts are sandboxed and not expected to be reviewed or maintained by the dev team. See the custom-scripts instruction file for full details.
+- **AI-generated scripts** — Save AI-generated tooling in `_tools-custom/ai/[subject]/[verb]`. These scripts must follow the project's ESLint config (`.eslintrc.json`). AI-generated scripts are sandboxed and not expected to be reviewed or maintained by the dev team. See the custom-scripts instruction file for full details.
 
 ## Documentation
 
