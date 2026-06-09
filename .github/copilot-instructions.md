@@ -126,10 +126,10 @@ EBW's internal skills library provides workflow guidance (e.g. release checklist
 
 1. If `~/.ebw-agent-skills/` does not exist, clone it; otherwise pull the latest changes:
    ```
-   gh repo clone electricbookworks/ebw-agent-skills ~/.ebw-agent-skills \
+   git clone https://github.com/electricbookworks/ebw-agent-skills.git ~/.ebw-agent-skills \
      || git -C ~/.ebw-agent-skills pull
    ```
-   If the clone fails (e.g. permission denied or not authenticated), inform the user: "EBW's internal agent skills are only available to authorised EBW collaborators. If you think you should already have access, please contact EBW." Then continue the session without skills support.
+   The HTTPS clone uses the Codespace's built-in token automatically, so no `gh` CLI or extra authentication step is needed. If the clone fails (e.g. `Repository not found`, permission denied, or not authenticated), inform the user: "EBW's internal agent skills are only available to authorised EBW collaborators. If you think you should already have access, please contact EBW." Then continue the session without skills support.
 2. Read `~/.ebw-agent-skills/skills-index.md` to identify relevant skills for the current task. Load a skill only when the task matches its description.
 
 In a Codespace, access to this private repo is granted via the project's devcontainer repository permissions. Users are prompted to authorise access when they first create a Codespace, and only users with org-level access to `ebw-agent-skills` will succeed.
