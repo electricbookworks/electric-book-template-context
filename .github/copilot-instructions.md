@@ -119,3 +119,21 @@ The canonical template docs are at https://electricbookworks.github.io/electric-
 - **Image format mismatch**: if images aren't appearing, check that the correct format subdirectory (`web/`, `print-pdf/`, etc.) contains the file and that `image-set` in the config matches.
 - **PDF JavaScript**: PrinceXML requires ES5. The webpack config handles this, but any new JS must be compatible with Babel transpilation.
 - **EPUB validation**: EPUB output goes through extensive post-processing (Gulp tasks for XHTML conversion, link rewriting, file cleanup). Test with an EPUB validator after changes to includes or layouts.
+
+## EBW agent skills
+
+EBW's internal skills library provides workflow guidance (e.g. release checklists, monthly financials). It is private and only available to authorised EBW collaborators, so this step is optional and fails gracefully for everyone else. Clone it if not already present:
+
+1. If `~/.ebw-agent-skills/` does not exist, clone it; otherwise pull the latest changes:
+   ```
+   gh repo clone electricbookworks/ebw-agent-skills ~/.ebw-agent-skills \
+     || git -C ~/.ebw-agent-skills pull
+   ```
+   If the clone fails (e.g. permission denied or not authenticated), inform the user: "EBW's internal agent skills are only available to authorised EBW collaborators. If you think you should already have access, please contact EBW." Then continue the session without skills support.
+2. Read `~/.ebw-agent-skills/skills-index.md` to identify relevant skills for the current task. Load a skill only when the task matches its description.
+
+In a Codespace, access to this private repo is granted via the project's devcontainer repository permissions. Users are prompted to authorise access when they first create a Codespace, and only users with org-level access to `ebw-agent-skills` will succeed.
+
+## Project-specific notes
+
+Read the project's `README.md` for any project-specific information not covered here.
