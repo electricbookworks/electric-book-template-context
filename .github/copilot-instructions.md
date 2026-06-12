@@ -129,10 +129,10 @@ EBW's internal skills library provides workflow guidance (e.g. release checklist
    git clone https://github.com/electricbookworks/ebw-agent-skills.git ~/.ebw-agent-skills \
      || git -C ~/.ebw-agent-skills pull
    ```
-   The HTTPS clone uses the Codespace's built-in token automatically, so no `gh` CLI or extra authentication step is needed. If the clone fails (e.g. `Repository not found`, permission denied, or not authenticated), inform the user: "EBW's internal agent skills are only available to authorised EBW collaborators. If you think you should already have access, please contact EBW." Then continue the session without skills support.
+   The HTTPS clone uses the Codespace's built-in token automatically, so no `gh` CLI or extra authentication step is needed. If the clone fails (e.g. `Repository not found`, permission denied, or not authenticated), inform the user: "EBW's internal agent skills are only available in Codespaces created from an `electricbookworks`-owned repository, not from a personal fork. If you are working in a fork, the skills cannot be loaded here. If you believe you should have access and are not in a fork, please contact EBW." Then continue the session without skills support.
 2. Read `~/.ebw-agent-skills/skills-index.md` to identify relevant skills for the current task. Load a skill only when the task matches its description.
 
-In a Codespace, access to this private repo is granted via the project's devcontainer repository permissions. Users are prompted to authorise access when they first create a Codespace, and only users with org-level access to `ebw-agent-skills` will succeed.
+In a Codespace, access to this private repo is granted via the project's devcontainer repository permissions. Users are prompted to authorise access when they first create a Codespace, and only users with org-level access to `ebw-agent-skills` will succeed. This works only when the Codespace is created from an `electricbookworks`-owned repository. Codespaces created from a personal fork cannot reach `ebw-agent-skills`, because GitHub's cross-repository permissions only apply when the fork and the target repo share the same owner. Freelancers and others working in forks will see an "insufficient permission" prompt on Codespace creation; this is expected and can be safely dismissed by choosing "Continue without authorizing". To use the skills, create the Codespace from the `electricbookworks` repository directly rather than from a fork.
 
 ## Project-specific notes
 
