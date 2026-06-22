@@ -98,8 +98,27 @@ Additional parameters: `image`, `start`, `subtitles`, `description`, `class`.
 
 > Not all includes are available in every EBT project. Check `_includes/` to see what's available.
 
+### Liquid output tags inside include parameters
+
+Jekyll's `{% include %}` tag does **not** allow `{{ ... }}` output tags nested inside its parameter values. The include tag validates its raw markup against a strict pattern and rejects the braces, failing the whole build with:
+
+```
+Liquid Exception: Invalid syntax for include tag. File contains invalid characters or sequences
+```
+
+This applies to every parameter, including markdown links embedded in a parameter value (e.g. a link inside a `caption=`, `slide-caption=`, or `options=` parameter). For example, this **breaks the build**:
+
+```liquid
+{% include figure
+   slide-caption="[Download the file]({{ site.canonical-url }}/downloads/file.xlsx)"
+%}
+```
+
+Work around it by hardcoding the value (e.g. the absolute URL) instead of interpolating a config variable, or by building the string with `{% capture %}` before the include and passing the captured variable. Note that `{{ ... }}` works fine in ordinary markdown links *outside* include tags — only include parameters are affected.
+
 ## Do not
 
 - Add `permalink` to frontmatter — EBT uses `permalink: none` globally
 - Edit images in format subdirectories — edit `_source/` originals instead
 - Skip the `title` or `style` frontmatter keys
+- Nest `{{ ... }}` Liquid output tags inside `{% include %}` parameters — it breaks the build (see above)
